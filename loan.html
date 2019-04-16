@@ -1,0 +1,82 @@
+<html>
+<body>
+<form>
+
+<input type="button" id="button" value="Transfer money" onclick="funct()"><br><br><br>
+TRANSFER AMOUNT<input type="text" id="a1" name="am" disabled onchange="fun()"><br><br>
+BENEFICIARY NAME<input type="text" id="b1" disabled onchange="fun()"><br><br><br>
+<input type="button" id="button1" value="SUBMIT"  disabled onclick="amount()"><br><br><br>
+
+LOAN AMOUNT<input type="text" id="l1" name="am"><br><br>
+<input type="button" id="button2" value="Interest calculator" onclick="inte()"><br><br><br>
+<input type="button" id="button3" value="CONFIRM" onclick="inte()" ><br><br><br>
+<input type="button" id="button4" value="VIEW BALANCE" onclick="view()"><br><br><br>
+
+</form>
+<script>
+
+function funct()
+{
+	document.getElementById("a1").disabled=false;
+	document.getElementById("b1").disabled=false;
+}
+
+function fun()
+{
+		document.getElementById("button1").disabled=false;
+}
+
+function amount()
+{
+	var minbalance=30000
+	var available=35000
+	var a=document.getElementById("a1").value;
+	var b=document.getElementById("b1").value;
+	if (a>0 && a<=25000)
+	{
+		alert("amount"+a+"successfully transferred to "+b);
+	}
+	else
+	{
+		alert("INVALID TRANSACTION");
+	}	
+}
+
+function conf()
+{ 
+	var j=document.getElementById("l1").value;
+	if(j>1)
+	{
+		alert("click transfer calculation")
+	}
+	else
+	{
+		alert("invalied loan amount")
+	}
+}
+function inte()
+{
+	var amm=document.getElementById("l1").value;
+	var cal
+	cal=(amm*14)/100
+	alert("loan"+cal);
+}
+function view()
+{
+	var avaibal=35000
+	var t=document.getElementById("l1").value;
+	total=avaibal-t
+	alert("Available balance in account"+total) 
+} 
+
+
+
+
+
+
+
+
+		
+</script>
+</body>
+</html>
